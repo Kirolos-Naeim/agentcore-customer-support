@@ -1,0 +1,21 @@
+
+⚠️ Recommendation: The Starter Toolkit CLI is no longer supported.
+   Please use the AgentCore CLI (@aws/agentcore) to create, develop, and deploy agents on Amazon Bedrock AgentCore.
+   New Bedrock AgentCore features are only accessible in the AgentCore CLI.
+
+   To uninstall this starter toolkit, run: pip uninstall bedrock-agentcore-starter-toolkit
+   To install the AgentCore CLI: npm install -g @aws/agentcore
+   To import existing agents, run: agentcore import
+   Set AGENTCORE_SUPPRESS_RECOMMENDATION=1 to silence this warning.
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────── CustomerSupportAgent ──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Session: 85206ea7-7aff-4608-98cf-641d54777e3a                                                                                                                                                                            │
+│ Request ID: 005f4a96-194f-413b-80bd-e5a46042065a                                                                                                                                                                         │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:017794077976:runtime/CustomerSupportAgent-J363R56VlQ                                                                                                                            │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/CustomerSupportAgent-J363R56VlQ-DEFAULT --log-stream-name-prefix "2026/11/10/[runtime-logs" --follow                                                                 │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/CustomerSupportAgent-J363R56VlQ-DEFAULT --log-stream-name-prefix "2026/11/10/[runtime-logs" --since 1h                                                               │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+Yes, I remember your name is Jane and you prefer concise responses. How can I assist you today?

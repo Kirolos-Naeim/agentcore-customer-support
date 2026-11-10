@@ -1,0 +1,14 @@
+[
+  {
+    "semanticMemoryStrategy": {
+      "name": "customer_facts",
+      "namespaces": ["cs_agent/{actorId}/facts"]
+    }
+  },
+  {
+    "userPreferenceMemoryStrategy": {
+      "name": "customer_preferences",
+      "namespaces": ["cs_agent/{actorId}/preferences"]
+    }
+  }
+]

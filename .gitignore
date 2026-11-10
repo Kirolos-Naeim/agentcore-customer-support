@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.venv-*/
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# Environment variables and credentials
+.env
+.env.*
+!.env.example
+.aws/
+*.pem
+*.key
+
+# Generated AgentCore deployment files
+.bedrock_agentcore/
+.bedrock_agentcore.yaml
+.bedrock_agentcore.yaml.*
+agentcore/
+
+# Generated deployment packages and logs
+*.zip
+*.log
+
+# Editor and operating system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+# Generated files
+.bedrock_agentcore/
+.bedrock_agentcore.yaml
+.bedrock_agentcore.yaml.*
+__pycache__/
+*.py[cod]
+*.zip

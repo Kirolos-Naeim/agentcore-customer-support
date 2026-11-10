@@ -1,0 +1,27 @@
+
+⚠️ Recommendation: The Starter Toolkit CLI is no longer supported.
+   Please use the AgentCore CLI (@aws/agentcore) to create, develop, and deploy agents on Amazon Bedrock AgentCore.
+   New Bedrock AgentCore features are only accessible in the AgentCore CLI.
+
+   To uninstall this starter toolkit, run: pip uninstall bedrock-agentcore-starter-toolkit
+   To install the AgentCore CLI: npm install -g @aws/agentcore
+   To import existing agents, run: agentcore import
+   Set AGENTCORE_SUPPRESS_RECOMMENDATION=1 to silence this warning.
+
+╭───────────────────────────────────────────────────────────────────────── CustomerSupportAgent ──────────────────────────────────────────────────────────────────────────╮
+│ Session: 62b35d09-8ac7-4c93-8c9a-5d043f0af99a                                                                                                                           │
+│ Request ID: 10599eba-4624-49a7-9c87-438430f473a2                                                                                                                        │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:017794077976:runtime/CustomerSupportAgent-J363R56VlQ                                                                           │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/CustomerSupportAgent-J363R56VlQ-DEFAULT --log-stream-name-prefix "2026/11/10/[runtime-logs" --follow                │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/CustomerSupportAgent-J363R56VlQ-DEFAULT --log-stream-name-prefix "2026/11/10/[runtime-logs" --since 1h              │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                                        │
+╰─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+Based on the knowledge base information, the benefits of the Platinum loyalty tier are:
+
+- **Free same-day shipping** - Faster delivery option compared to other tiers
+- **15% discount** - Higher discount rate than Gold tier's 10% discount on accessories
+- **Priority customer support** - Faster assistance compared to regular support channels
+
+The Platinum tier requires **5,000 or more points** to achieve, placing you in the highest loyalty tier available.

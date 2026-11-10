@@ -1,0 +1,23 @@
+
+⚠️ Recommendation: The Starter Toolkit CLI is no longer supported.
+   Please use the AgentCore CLI (@aws/agentcore) to create, develop, and deploy agents on Amazon Bedrock AgentCore.
+   New Bedrock AgentCore features are only accessible in the AgentCore CLI.
+
+   To uninstall this starter toolkit, run: pip uninstall bedrock-agentcore-starter-toolkit
+   To install the AgentCore CLI: npm install -g @aws/agentcore
+   To import existing agents, run: agentcore import
+   Set AGENTCORE_SUPPRESS_RECOMMENDATION=1 to silence this warning.
+
+╭────────────────────────────────────────────────────────────────────────────────────────────────── CustomerSupportAgent ──────────────────────────────────────────────────────────────────────────────────────────────────╮
+│ Session: 85206ea7-7aff-4608-98cf-641d54777e3a                                                                                                                                                                            │
+│ Request ID: ecbc4c54-a6f1-4917-88c0-c5839c7677f4                                                                                                                                                                         │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:017794077976:runtime/CustomerSupportAgent-J363R56VlQ                                                                                                                            │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/CustomerSupportAgent-J363R56VlQ-DEFAULT --log-stream-name-prefix "2026/11/10/[runtime-logs" --follow                                                                 │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/CustomerSupportAgent-J363R56VlQ-DEFAULT --log-stream-name-prefix "2026/11/10/[runtime-logs" --since 1h                                                               │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                                                                                         │
+╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+I attempted to navigate to https://www.udacity.com using the browser tool, but encountered a timeout error after 30 seconds. The browser session failed to load the page within the expected timeframe.
+
+Rather than guessing the page title, I must report this error as requested. The navigation to fetch the actual page title was unsuccessful due to a timeout during the browsing process.

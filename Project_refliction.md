@@ -1,0 +1,10 @@
+Project Reflection
+I designed the customer support agent to separate conversation handling from backend operations. The agent discovers tools through AgentCore Gateway using MCPClient. Order tracking uses an API Gateway REST API connected to Lambda, while refund processing uses a direct Lambda target. This separation lets each backend expose the request format it expects, while the agent accesses both through one tool interface.
+
+One challenge was a dependency compatibility issue during deployment. The runtime failed to initialize because version 0.9.0 of strands-agents-tools removed the AgentCoreBrowser interface used by the project. I inspected the CloudWatch traceback, pinned the package to version 0.8.8 in both dependency files, and redeployed. The agent then initialized successfully. This showed me why dependency constraints must match the APIs used by the application.
+
+Another challenge involved browser navigation timing out on Udacity’s website. A subsequent browser evaluation retrieved the actual page URL and title, demonstrating that a navigation timeout does not always mean the page is unavailable.
+
+For production, I would strengthen authentication and authorization. The project Gateway uses no inbound authentication for the sandbox demonstration. A deployed customer support system should authenticate customers and verify order ownership before returning personal information or processing refunds. I would also make refund operations idempotent so retries cannot create duplicate refunds.
+
+Finally, I would monitor tool failures, retrieval quality, latency, and cost. Memory extraction happens asynchronously, so the application should handle missing context honestly. These improvements would make the agent more reliable while preserving the modular architecture demonstrated in the project.
