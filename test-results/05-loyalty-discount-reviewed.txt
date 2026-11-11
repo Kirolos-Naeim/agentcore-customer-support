@@ -1,0 +1,30 @@
+
+⚠️ Recommendation: The Starter Toolkit CLI is no longer supported.
+   Please use the AgentCore CLI (@aws/agentcore) to create, develop, and deploy agents on Amazon Bedrock AgentCore.
+   New Bedrock AgentCore features are only accessible in the AgentCore CLI.
+
+   To uninstall this starter toolkit, run: pip uninstall bedrock-agentcore-starter-toolkit
+   To install the AgentCore CLI: npm install -g @aws/agentcore
+   To import existing agents, run: agentcore import
+   Set AGENTCORE_SUPPRESS_RECOMMENDATION=1 to silence this warning.
+
+╭───────────────────────────────────────────────────────────────────────────────────────── CustomerSupportAgent ─────────────────────────────────────────────────────────────────────────────────────────╮
+│ Session: 85206ea7-7aff-4608-98cf-641d54777e3a                                                                                                                                                          │
+│ Request ID: 83e1525c-fb0e-495c-ac8e-093b76e86adb                                                                                                                                                       │
+│ ARN: arn:aws:bedrock-agentcore:us-east-1:017794077976:runtime/CustomerSupportAgent-J363R56VlQ                                                                                                          │
+│ Logs: aws logs tail /aws/bedrock-agentcore/runtimes/CustomerSupportAgent-J363R56VlQ-DEFAULT --log-stream-name-prefix "2026/11/11/[runtime-logs" --follow                                               │
+│       aws logs tail /aws/bedrock-agentcore/runtimes/CustomerSupportAgent-J363R56VlQ-DEFAULT --log-stream-name-prefix "2026/11/11/[runtime-logs" --since 1h                                             │
+│ GenAI Dashboard: https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#gen-ai-observability/agent-core                                                                                       │
+╰────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
+
+Response:
+Here are the loyalty discount results for your $150 order:
+
+- **Order total**: $150.00  
+- **Points redeemed**: 4,000  
+- **Points discount**: $40.00  
+- **Tier discount (Gold)**: 11%  
+- **Final total**: $99.00  
+- **Total savings**: $51.00  
+- **Points earned**: 99  
+- **Remaining points**: 349

@@ -18,7 +18,7 @@ from strands_tools.browser import AgentCoreBrowser
 from decimal import Decimal, ROUND_HALF_UP
 
 
-logging.basicConfig(level=logging.WARNING)
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("CSAI_Agent")
 app = BedrockAgentCoreApp()
 
@@ -267,6 +267,7 @@ print(json.dumps({{
     "total_savings": float(total_savings),
     "points_earned": points_earned,
     "remaining_points": remaining_points,
+    "tier_discount_pct": float(tier_rates[tier]),
 }}))
 """
 
@@ -313,9 +314,11 @@ print(json.dumps({{
                 "Code Interpreter unavailable. Applied tier discount "
                 "only; points redemption and earning were not calculated."
             ),
+            "points_redeemed": 0,
+            "tier_discount_pct": float(rates[tier]),
             "tier_discount": float(discount),
             "final_total": float(total - discount),
-            "points_redeemed": 0,
+            "remaining_points": loyalty_points,
         })
 SYSTEM_PROMPT = """You are a customer support assistant for an online store.
 
@@ -369,13 +372,34 @@ async def invoke(payload, context=None):
             agent_core_browser.browser,
         ]
 
-        client = MCPClient(
+        gateway_client  = MCPClient(
             lambda: streamable_http_client(url=GATEWAY_URL)
         )
 
-        with client:
-            gateway_tools = client.list_tools_sync()
-            tools.extend(gateway_tools)
+        with gateway_client :
+            try:
+                gateway_tools = gateway_client.list_tools_sync()
+                tools.extend(gateway_tools)
+
+                logger.info(
+                    "Gateway connected successfully. Loaded %d tools.",
+                    len(gateway_tools),
+                )
+
+            except TimeoutError:
+                logger.exception("Gateway tool loading timed out")
+                return "The support tools timed out. Please try again shortly."
+
+            except ConnectionError:
+                logger.exception("Gateway connection failed")
+                return "The support tools could not be reached. Please try again shortly."
+
+            except Exception:
+                logger.exception("Gateway tool loading failed")
+                return (
+                    "The support tools are unavailable. "
+                    "Please try again later."
+                )
 
             agent = Agent(
                 model=model,
@@ -392,10 +416,13 @@ async def invoke(payload, context=None):
 
             return "The agent completed without a text response."
 
-    except Exception as error:
+    except Exception:
         logger.exception("Customer support invocation failed")
         return {
-            "error": str(error),
+            "error": (
+                "I could not complete your request. "
+                "Please try again shortly."
+            )
         }
 
 
